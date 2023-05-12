@@ -1,10 +1,9 @@
 # positional arguments: 
 
 # tanımlanan fonksiyonların içerisine alıdığı parametrelere denir.
-#tanımlanan fonksiyonda kaç tane pozitional arguments tanımlı ise o kadar veri girmek gerekir. Aksi halde hata verir.
 
 
-def kuvvet_al(x,y):             # bu fonksyionu kullanabilmek için 2 adet parametre girmek zorundayız. daha az veya daha fazla girmemiz durumunda hata alırız.
+def kuvvet_al(x,y):             
     return x**y 
 
 print(kuvvet_al(3,4))           # / 81
@@ -13,7 +12,7 @@ print(kuvvet_al(3,4))           # / 81
 
 #keyword arguments :
 
-# tanımlanan fonksiyonlarda varsayılan olarak gelen argumanlar olabilir. bunlar keyword arguöemts olarak isimlendirilir.
+# tanımlanan fonksiyonlarda varsayılan olarak gelen argumanlar olabilir. bunlar keyword arguemts olarak isimlendirilir.
 
 def bilgi_ver(isim,soyisim,yas="Girilmedi"):
     return "Ad:{} , soyad: {} , yas: {}".format(isim,soyisim,yas) 
@@ -26,13 +25,13 @@ def bilgi_ver2(isim,soyisim = "Girilmedi",yas="Girilmedi"):
 
 print(bilgi_ver2("Halim"))              # / Ad:Halim , soyad: Girilmedi , yas: Girilmedi
 
-# kendime not: fonksiyon tanımlarken boş bırakılmasını uygun gördüğümüz yerlerde default olarak bi ifade ranıtabiliriz.
-# aksi hale hata alırız ve program biter. 
+# kendime not: fonksiyon tanımlarken boş bırakılmasını uygun gördüğümüz yerlerde default olarak bi ifade tanıtabiliriz. aksi hale hata alırız ve program biter. 
+
 
 def bilgi_ver3(isim,soyisim="girilmedi",yas="Girilmedi"):
     return "Ad:{} , soyad: {} , yas: {}".format(isim,soyisim,yas)
 
-print(bilgi_ver3("uğur",34))        # / Ad:uğur , soyad: 34 , yas: Girilmedi pythonda veri sıralaması önemlidir. fonksyionda belirtildiği şekliyle veri girmek gerekir. eğer bilinmiyorda
+print(bilgi_ver3("uğur",34))             # / Ad:uğur , soyad: 34 , yas: Girilmedi / pythonda veri sıralaması önemlidir. fonksyionda belirtildiği şekliyle veri girmek gerekir. eğer bilinmiyorsa şu şekilde yapılabilir.
 print(bilgi_ver3("oğuz",yas=34))         # / Ad:oğuz , soyad: girilmedi , yas: 34
 
 
@@ -71,8 +70,17 @@ def selamla(mesaj,*args):
     print("****************")
     for i in args:
         print(i)
+    return "fonksyionun çalışması tamamlandı"
 
 print(selamla("selamlar","nasılsınız","iyi günler","hoşçakalın"))
+
+# / selamlar
+# / ****************
+# / nasılsınız
+# / iyi günler
+# / hoşçakalın
+# / fonksyionun çalışması tamamlandı
+
 
 # / ilk arguman mesaj değişkeni içerisine girdi ve ekrana basıldı. diğer bütün argumanlar args ı oluşturdu ve for döngüsü ile teker teker ekrana basıldı.
 
